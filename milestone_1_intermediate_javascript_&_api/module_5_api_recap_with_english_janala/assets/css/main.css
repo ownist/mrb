@@ -1,6 +1,10 @@
 /* google fonts english and bengali */
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap");
 
+@theme {
+  --font-body: "Instrument Serif", serif;
+}
+
 /* for auto bangla support */
 [lang="bn"] {
   font-family: "Hind Siliguri", sans-serif;
@@ -13,4 +17,25 @@
 
 body {
   font-family: "Instrument Serif", serif;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  background: #fff;
+}
+
+button {
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input {
+  outline: none;
+}
+
+@layer components {
+  .nav_btn_gap button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 }

@@ -24,23 +24,122 @@
     />
   </head>
   <body>
-    <div class="flex items-center justify-center w-full p-4">
-      <div class="flex items-center gap-2">
-        <div class="">
-          <img width="50" src="./assets/images/favicon.ico" alt="favicon" />
+    <!-- header section start -->
+    <header
+      class="fixed z-10 w-full p-4 md:py-7 bg-white border-b border-b-zinc-300"
+    >
+      <nav class="flex items-center justify-between max-w-[1440px] mx-auto">
+        <!-- logo -->
+        <div class="w-full flex items-center justify-center sm:justify-start">
+          <a
+            href="/milestone_1_intermediate_javascript_&_api/module_5_api_recap_with_english_janala/index.html"
+            class="inline-block"
+          >
+            <img class="w-28 pointer-events-none" src="./assets/images/logo.svg" alt="logo" />
+          </a>
         </div>
 
-        <div class="flex flex-col">
-          <h1 class="text-xl font-semibold">English Janala</h1>
-          <div class="flex items-center gap-1">
-            <p class="text-zinc-700">@ejanala</p>
-            <span>
-              <i class="ri-verified-badge-fill text-xs"></i>
-            </span>
+        <!-- action btns -->
+        <div class="hidden sm:flex items-center gap-2">
+          <!-- faq btn -->
+          <div class="nav_btn_gap">
+            <button
+              class="px-7 py-3 text-sm font-semibold rounded-sm bg-zinc-800 text-zinc-300 hover:bg-zinc-900"
+            >
+              <span>
+                <i class="ri-question-line"></i>
+              </span>
+              <p>FAQ</p>
+            </button>
+          </div>
+
+          <!-- learn btn -->
+          <div class="nav_btn_gap">
+            <button
+              class="px-7 py-3 text-sm font-semibold rounded-sm bg-zinc-800 text-zinc-300 hover:bg-zinc-900"
+            >
+              <span>
+                <i class="ri-book-open-line"></i>
+              </span>
+              <p>Learn</p>
+            </button>
+          </div>
+
+          <!-- logout btn -->
+          <div class="nav_btn_gap">
+            <button
+              class="px-7 py-3 text-sm font-semibold rounded-sm bg-zinc-800 text-zinc-300 hover:bg-zinc-900"
+            >
+              <span>
+                <i class="ri-logout-circle-r-line"></i>
+              </span>
+              <p>Logout</p>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- header section end -->
+
+    <!-- banner section start -->
+    <section class="w-full min-h-dvh flex items-center px-4 py-4 sm:py-10">
+      <div class="max-w-[1440px] w-full mx-auto">
+        <div
+          class="max-w-full sm:max-w-2xl sm:mx-auto text-center space-y-4 sm:space-y-6"
+        >
+          <!-- heading -->
+          <div class="space-y-2 sm:space-y-6">
+            <h1 class="text-4xl sm:text-5xl font-semibold">English is Easy..!!</h1>
+            <p
+              lang="bn"
+              class="text-[1rem] sm:text-2xl font-thin text-zinc-900 opacity-80"
+            >
+              আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+              আপনার দক্ষতা বাড়াতে চান, আমাদের
+              <span lang="en">Interactive Lessons</span> আপনাকে নিয়ে যাবে অন্য
+              একটি <span lang="en">Level</span> এ
+            </p>
+          </div>
+          <!-- form -->
+          <div class="max-w-xs mx-auto">
+            <form action="#" class="space-y-5">
+              <div class="">
+                <input
+                  class="w-full rounded-sm border border-zinc-900/20 text-zinc-900/50 text-sm font-normal p-3"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter email address"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+
+              <div class="">
+                <input
+                  class="w-full rounded-sm border border-zinc-900/20 text-zinc-900/50 text-sm font-normal p-3"
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter password"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+
+              <div class="">
+                <button
+                  type="submit"
+                  class="w-full text-sm font-light px-4 py-2.5 rounded-sm bg-zinc-800 hover:bg-zinc-900 text-zinc-100"
+                >
+                  Get Started
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- connect js file -->
     <script src="./assets/js/main.js"></script>
