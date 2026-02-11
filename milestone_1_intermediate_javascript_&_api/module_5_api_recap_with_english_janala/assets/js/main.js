@@ -19,7 +19,7 @@ const displayVocCategories = (lessons) => {
     const btnDiv = document.createElement("div");
     // set inside
     btnDiv.innerHTML = `
-        <button onclick="loadLevelWords(${lesson.level_no})" class="flex items-center gap-1 text-sm font-thin px-2 sm:px-4 py-1 sm:py-2.5 rounded-sm border border-zinc-700 hover:bg-zinc-300">
+        <button id="lesson_btn_${lesson.level_no}" onclick="loadLevelWords(${lesson.level_no})" class="flex items-center gap-1 text-sm font-thin px-2 sm:px-4 py-1 sm:py-2.5 rounded-sm bg-zinc-200 hover:bg-zinc-400/60 lesson_button">
             <span>
                 <i class="ri-booklet-line"></i>
             </span>
@@ -32,13 +32,24 @@ const displayVocCategories = (lessons) => {
   });
 };
 
+// remove active class from lesson btn
+const removeActiveClass = () => {
+  const lessonBtns = document.querySelectorAll(".lesson_button");
+  lessonBtns.forEach((btn) => btn.classList.remove("lesson_btn_acive"));
+};
+
 // load levelWords data
 const loadLevelWords = (id) => {
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
 
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayLevelWords(data.data));
+    .then((data) => {
+      removeActiveClass();
+      const clickedBtn = document.getElementById(`lesson_btn_${id}`);
+      clickedBtn.classList.add("lesson_btn_acive");
+      displayLevelWords(data.data);
+    });
 };
 
 // display level words
@@ -99,6 +110,7 @@ const displayLevelWords = (words) => {
             </div>
             <div class="mt-14 flex items-center justify-between">
                 <div
+                onclick="my_modal_2.showModal()"
                 class="cursor-pointer px-4 py-2 rounded-md bg-zinc-500/10 transition-all hover:bg-zinc-700/20"
                 >
                 <span
