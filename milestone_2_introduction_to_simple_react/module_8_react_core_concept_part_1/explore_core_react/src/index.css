@@ -66,3 +66,10 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.student {
+  padding: 16px;
+  border: 1px solid white;
+  border-radius: 8px;
+  margin-block: 16px;
+}

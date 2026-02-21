@@ -3,28 +3,52 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Vite + React</h1>
-      <Person />
-      <Person></Person>
+      <h1>React Core Concepts</h1>
+      <Student />
+      <Student />
 
       <Person />
-      <Sports />
+      <Developer name="Shahed" tech="JavaScript" />
+      <Developer name="Ownist" tech="React.js" />
     </>
   );
 }
 
-function Person() {
-  const age = 17;
-  const name = "Shahed";
+// student
+function Student() {
   return (
-    <h1>
-      I'm {name}, age: {age}
-    </h1>
+    <div className="student">
+      <p>Name:</p>
+      <p>Dept:</p>
+    </div>
   );
 }
 
-function Sports() {
-  return <h4>I love Programming</h4>;
+function Person() {
+  const name = "Ownist";
+
+  // style
+  const personStyle = {
+    color: "green",
+    textAlign: "left",
+  };
+
+  return (
+    <div style={personStyle}>
+      <h3>I'm {name}</h3>
+    </div>
+  );
+}
+
+function Developer(props) {
+  console.log(props);
+
+  return (
+    <div>
+      <h2>Developer: {props.name}</h2>
+      <h3>Technology: {props.tech}</h3>
+    </div>
+  );
 }
 
 export default App;
